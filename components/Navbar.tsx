@@ -4,6 +4,8 @@ import Link from 'next/link'
 import MainNav from './MainNav'
 import getCategories from '@/actions/get-category'
 
+export const revalidate = 0
+
 interface NavbarProps {}
 
 const Navbar: React.FC<NavbarProps> = async () => {
