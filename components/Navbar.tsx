@@ -2,10 +2,12 @@ import React from 'react'
 import Container from './ui/container'
 import Link from 'next/link'
 import MainNav from './MainNav'
+import getCategories from '@/actions/get-category'
 
 interface NavbarProps {}
 
-const Navbar: React.FC<NavbarProps> = () => {
+const Navbar: React.FC<NavbarProps> = async () => {
+  const categories = await getCategories()
   return (
     <div className='border-b'>
       <Container>
@@ -13,7 +15,7 @@ const Navbar: React.FC<NavbarProps> = () => {
           <Link className='ml-4 flex lg:ml-0 gap-x-2' href='/'>
             <p className='font-bold text-xl'>STORE</p>
           </Link>
-          <MainNav data={[]} />
+          <MainNav data={categories} />
         </div>
       </Container>
     </div>
