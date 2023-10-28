@@ -1,4 +1,6 @@
 import { Product as ProductType } from '../types'
+import NoResults from './ui/no-result'
+import ProductCard from './ui/product-card'
 
 type ProductListProps = {
   title: string
@@ -7,16 +9,14 @@ type ProductListProps = {
 
 const ProductList = ({ title, items }: ProductListProps) => {
   return (
-    <div>
-      <h2>{title}</h2>
-      <ul>
+    <div className='space-y-4'>
+      <h3 className='font-bold text-3xl'>{title}</h3>
+      {items.length === 0 && <NoResults />}
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
         {items.map((item) => (
-          <li key={item.id}>
-            <h3>{item.name}</h3>
-            <p>{item.price}</p>
-          </li>
+          <ProductCard key={item.id} data={item} />
         ))}
-      </ul>
+      </div>
     </div>
   )
 }
