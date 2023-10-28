@@ -14,7 +14,7 @@ const Navbar: React.FC<NavbarProps> = async () => {
   return (
     <div className='border-b'>
       <Container>
-        <div className='relative px-4 sm:px-6 lg:px-8'>
+        <div className='relative px-4 sm:px-6 lg:px-8 items-center flex h-16'>
           <Link className='ml-4 flex lg:ml-0 gap-x-2' href='/'>
             <p className='font-bold text-xl'>STORE</p>
           </Link>

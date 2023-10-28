@@ -1,7 +1,12 @@
+import Billboard from '@/components/Billboard'
+import Container from '@/components/ui/container'
+
 export default function HomePage() {
   return (
-    <main className='flex min-h-screen flex-col items-center justify-between p-24'>
-      Hello Store
-    </main>
+    <Container>
+      <div className='space-y-10 pb-10'>
+        <Billboard />
+      </div>
+    </Container>
   )
 }
