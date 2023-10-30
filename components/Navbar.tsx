@@ -2,7 +2,7 @@ import React from 'react'
 import Container from './ui/container'
 import Link from 'next/link'
 import MainNav from './MainNav'
-import getCategories from '@/actions/get-category'
+import getCategories from '@/actions/get-categories'
 import NavbarActions from './NavbarActions'
 
 export const revalidate = 0
