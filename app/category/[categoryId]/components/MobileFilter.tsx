@@ -52,7 +52,7 @@ const MobileFilter: React.FC<MobileFilterProps> = ({ sizes, colors }) => {
               leaveFrom='opacity-100 scale-100'
               leaveTo='opacity-0 scale-95'
             >
-              <Dialog.Panel className='relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-white py-4 pb-6 shadow-xl'>
+              <Dialog.Panel className='relative flex flex-col w-full h-full max-w-xs py-4 pb-6 ml-auto overflow-y-auto bg-white shadow-xl'>
                 <div className='flex items-center justify-end px-4'>
                   <IconButton icon={<X size={15} />} onClick={closeModal} />
                 </div>
