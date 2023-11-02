@@ -7,10 +7,13 @@ import { Expand, ShoppingCart } from 'lucide-react'
 import Currency from './currency'
 import { useRouter } from 'next/navigation'
 import usePreviewModal from '@/hooks/use-preview-modal'
+import useCart from '@/hooks/use-cart'
 
 const ProductCard = ({ data }: { data: Product }) => {
   const previewModal = usePreviewModal()
   const router = useRouter()
+  const cart = useCart()
+
   const handleClick = () => {
     router.push(`/product/${data.id}`)
   }
@@ -18,6 +21,11 @@ const ProductCard = ({ data }: { data: Product }) => {
   const onPreview: MouseEventHandler<HTMLButtonElement> = (event) => {
     event.stopPropagation()
     previewModal.onOpen(data)
+  }
+
+  const onAddToCart: MouseEventHandler<HTMLButtonElement> = (event) => {
+    event.stopPropagation()
+    cart.addItem(data)
   }
 
   return (
@@ -37,7 +45,7 @@ const ProductCard = ({ data }: { data: Product }) => {
           <div className='flex justify-center gap-6'>
             <IconButton onClick={onPreview} icon={<Expand size={20} className='text-gray-600' />} />
             <IconButton
-              onClick={handleClick}
+              onClick={onAddToCart}
               icon={<ShoppingCart size={20} className='text-gray-600' />}
             />
           </div>
